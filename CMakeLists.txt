@@ -3,5 +3,13 @@ project(pnuts_engine VERSION 1.0.0)
 
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
 
+#required for unit testing + modules
+include(CTest)
+enable_testing()
+include(ExternalProject)
+
+#third party modules
+add_subdirectory(spdlog)
+
 add_subdirectory(pnuts)
 add_subdirectory(sandbox)

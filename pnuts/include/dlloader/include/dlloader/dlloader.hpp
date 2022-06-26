@@ -6,6 +6,7 @@
 #include <memory>
 #include <string>
 #include <dlfcn.h>
+#include "spdlog/spdlog.h"
 
 namespace PNuts {
     namespace DLLoader_ns{
@@ -66,18 +67,18 @@ namespace PNuts {
         void DLLoader<Interface>::DL_Open(int RTLD) {
             m_lib_handle = dlopen(m_path.c_str(), RTLD); 
             if( m_lib_handle == NULL /*error*/ ) {
-                std::cerr << "DL_Open Error: " << dlerror() << std::endl; 
+                spdlog::error("DL_Open Error: {}", dlerror());
             }
         }
     
         template<typename Interface>
         void DLLoader<Interface>::DL_Close() {
             if( m_lib_handle == NULL ) {
-                std::cerr << "DL_Close Error: " << "Can't close unopened library" << std::endl;
+                spdlog::error("DL_Close Error: {}", "Can't close unopened library"); 
                 return;
             }
             if( dlclose(m_lib_handle) != 0 /*error*/ ) {
-                std::cerr << "DL_Close Error: " << dlerror() << std::endl;
+                spdlog::error("DL_Close Error: {}", dlerror());
             }
         }
     
@@ -91,7 +92,7 @@ namespace PNuts {
     
             if(!alloc_func || !deltr_func) {
                 DL_Close();
-                std::cerr << "DL_GetInstance Error: " << "Check if allocators and destructors are implemented" << std::endl;
+                spdlog::error("DL_GetInstance Error: {}", "Check if allocators and destructors are implemented");
             }
             return std::shared_ptr<Interface>(  alloc_func(), /*instantiate new object*/
                                                 [deltr_func](Interface *ptr){ /*Specify how to delete it*/

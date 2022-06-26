@@ -1,4 +1,5 @@
 #include "application/IApplication.hpp"
+#include "spdlog/spdlog.h"
 
 class Application : public PNuts::Application_ns::IApplication{
 public:
