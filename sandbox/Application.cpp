@@ -1,6 +1,7 @@
-#include "application/IApplication.hpp"
+#include "pnuts/IApplication.hpp"
+#include "pnuts/log.hpp"
 
-class Application : public PNuts::Application_ns::IApplication{
+class Application : public PNuts::IApplication{
 public:
     Application() {
     }
@@ -11,10 +12,10 @@ public:
     }
 };
 extern "C" {
-    PNuts::Application_ns::IApplication* allocator() {
+    PNuts::IApplication* allocator() {
         return new Application();
     }
-    void deleter(PNuts::Application_ns::IApplication* ptr) {
+    void deleter(PNuts::IApplication* ptr) {
         delete ptr;
     }
 }

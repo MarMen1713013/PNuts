@@ -1,5 +1,5 @@
 #pragma once
 
-#include "dlloader/dlloader.hpp"
-#include "application/IApplication.hpp"
-#include "log/log.hpp"
+#include "pnuts/dlloader.hpp"
+#include "pnuts/IApplication.hpp"
+#include "pnuts/log.hpp"
