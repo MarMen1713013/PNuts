@@ -17,15 +17,15 @@ namespace PNuts {
 } // PNuts
 
 //Core log macros
-#define PNUTS_CORE_FATAL(...) ::PNuts::Log::get_core_logger()->fatal(__VA_ARGS__)
-#define PNUTS_CORE_ERROR(...) ::PNuts::Log::get_core_logger()->error(__VA_ARGS__)
-#define PNUTS_CORE_WARN(...) ::PNuts::Log::get_core_logger()->warn(__VA_ARGS__)
-#define PNUTS_CORE_INFO(...) ::PNuts::Log::get_core_logger()->info(__VA_ARGS__)
-#define PNUTS_CORE_TRACE(...) ::PNuts::Log::get_core_logger()->trace(__VA_ARGS__)
+//#define PNUTS_CORE_FATAL(...) ::PNuts::Log::get_core_logger()->fatal(__VA_ARGS__)
+//#define PNUTS_CORE_ERROR(...) ::PNuts::Log::get_core_logger()->error(__VA_ARGS__)
+//#define PNUTS_CORE_WARN(...) ::PNuts::Log::get_core_logger()->warn(__VA_ARGS__)
+//#define PNUTS_CORE_INFO(...) ::PNuts::Log::get_core_logger()->info(__VA_ARGS__)
+//#define PNUTS_CORE_TRACE(...) ::PNuts::Log::get_core_logger()->trace(__VA_ARGS__)
 
 //Client log macros
-#define PNUTS_FATAL(...) ::PNuts::Log::get_client_logger()->fatal(__VA_ARGS__)
-#define PNUTS_ERROR(...) ::PNuts::Log::get_client_logger()->error(__VA_ARGS__)
-#define PNUTS_WARN(...) ::PNuts::Log::get_client_logger()->warn(__VA_ARGS__)
-#define PNUTS_INFO(...) ::PNuts::Log::get_client_logger()->info(__VA_ARGS__)
-#define PNUTS_TRACE(...) ::PNuts::Log::get_client_logger()->trace(__VA_ARGS__)
+//#define PNUTS_FATAL(...) ::PNuts::Log::get_client_logger()->fatal(__VA_ARGS__)
+//#define PNUTS_ERROR(...) ::PNuts::Log::get_client_logger()->error(__VA_ARGS__)
+//#define PNUTS_WARN(...) ::PNuts::Log::get_client_logger()->warn(__VA_ARGS__)
+//#define PNUTS_INFO(...) ::PNuts::Log::get_client_logger()->info(__VA_ARGS__)
+//#define PNUTS_TRACE(...) ::PNuts::Log::get_client_logger()->trace(__VA_ARGS__)

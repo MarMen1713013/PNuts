@@ -6,7 +6,7 @@
 #include <memory>
 #include <string>
 #include <dlfcn.h>
-#include "pnuts/log.hpp"
+//#include "pnuts/log.hpp"
 
 namespace PNuts {
     /**
@@ -65,18 +65,18 @@ namespace PNuts {
     void DLLoader<Interface>::DL_Open(int RTLD) {
         m_lib_handle = dlopen(m_path.c_str(), RTLD); 
         if( m_lib_handle == NULL /*error*/ ) {
-            PNuts::Log::get_client_logger()->error("DL_Open Error: {}", dlerror());
+            //PNuts::Log::get_client_logger()->error("DL_Open Error: {}", dlerror());
         }
     }
 
     template<typename Interface>
     void DLLoader<Interface>::DL_Close() {
         if( m_lib_handle == NULL ) {
-            PNuts::Log::get_client_logger()->error("DL_Close Error: {}", "Can't close unopened library"); 
+            //PNuts::Log::get_client_logger()->error("DL_Close Error: {}", "Can't close unopened library"); 
             return;
         }
         if( dlclose(m_lib_handle) != 0 /*error*/ ) {
-            PNuts::Log::get_client_logger()->error("DL_Close Error: {}", dlerror());
+            //PNuts::Log::get_client_logger()->error("DL_Close Error: {}", dlerror());
         }
     }
 
@@ -90,7 +90,7 @@ namespace PNuts {
 
         if(!alloc_func || !deltr_func) {
             DL_Close();
-            PNuts::Log::get_client_logger()->error("DL_GetInstance Error: {}", "Check if allocators and destructors are implemented");
+            //PNuts::Log::get_client_logger()->error("DL_GetInstance Error: {}", "Check if allocators and destructors are implemented");
         }
         return std::shared_ptr<Interface>(  alloc_func(), /*instantiate new object*/
                                             [deltr_func](Interface *ptr){ /*Specify how to delete it*/

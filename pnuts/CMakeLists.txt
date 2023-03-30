@@ -9,7 +9,7 @@ set_target_properties(
 target_link_libraries(pnuts INTERFACE ${CMAKE_DL_LIBS})
 target_include_directories(pnuts INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/include)
 
-add_executable(entry_point src/entry_point.cpp src/log.cpp)
+add_executable(entry_point src/entry_point.cpp) # src/log.cpp)
 set_target_properties(
     entry_point PROPERTIES
     CXX_STANDARD 17
