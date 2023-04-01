@@ -1,6 +1,5 @@
-#include "pnuts/log.hpp"
 #include <memory>
-#include <spdlog/common.h>
+#include <pnuts_engine/log.hpp>
 
 namespace PNuts {
     void Log::init() {

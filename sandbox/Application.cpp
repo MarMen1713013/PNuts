@@ -1,4 +1,4 @@
-#include "pnuts/IApplication.hpp"
+#include <pnuts_engine/IApplication.hpp>
 //#include "pnuts/log.hpp"
 
 class Application : public PNuts::IApplication{

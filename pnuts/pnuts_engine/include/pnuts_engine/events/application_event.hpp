@@ -1,6 +1,6 @@
 #pragma once
 
-#include "pnuts/events/event.hpp"
+#include "event.hpp"
 
 namespace PNuts {
 

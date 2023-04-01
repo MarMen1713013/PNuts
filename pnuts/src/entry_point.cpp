@@ -1,5 +1,5 @@
 #include <iostream>
-#include "pnuts/pnuts.h"
+#include <pnuts_engine/pnuts_engine.h>
 
 using namespace PNuts;
 
