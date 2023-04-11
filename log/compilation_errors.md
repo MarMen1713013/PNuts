@@ -11,8 +11,18 @@
 This error only appear on desktop since the main development is done on my laptop. On laptop the error is not understandable.
 This might be due to different system configurations.
 
+### Update: [mar 11 apr 2023, 10:20:03, CEST] 
+
+by removing and reinstalling `fmt` as
+
+```{bash}
+sudo apt-get remove libfmt-dev
+sudo apt-get install libfmt-dev
+```
+
+the issue on laptop got equal to the one on desktop.
+
 ### TODO
 
-1. solve the issue here
-2. check if the patch works on laptop
-3. investigate the differences between the 2 systems
+1. solve the issue
+2. check if the patch works everywhere
