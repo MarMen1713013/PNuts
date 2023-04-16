@@ -1,9 +1,11 @@
 #include <pnuts_engine/IApplication.hpp>
-//#include "pnuts/log.hpp"
+#include <pnuts_engine/log.hpp>
 
 class Application : public PNuts::IApplication{
 public:
     Application() {
+        PNuts::Log::init();
+        PNUTS_INFO("Starting sandbox application...");
     }
     virtual ~Application() {
     }
