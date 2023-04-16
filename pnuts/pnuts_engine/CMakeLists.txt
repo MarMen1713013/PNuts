@@ -8,6 +8,7 @@ add_library(pnuts_engine INTERFACE)
 target_link_libraries(pnuts_engine INTERFACE ${CMAKE_DL_LIBS})
 target_include_directories( pnuts_engine 
     INTERFACE
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/libs/spdlog/include
 )
 
