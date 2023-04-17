@@ -1,18 +1,26 @@
 #pragma once
-#include "spdlog/spdlog.h"
-#include "spdlog/fmt/ostr.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include <iostream>
 #include <memory>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace PNuts {
     class Log {
     public:
-        static void init();
+        static void init() {
+            spdlog::set_pattern("%^[%T] %n: %v%$");
+
+            m_core_logger = spdlog::stdout_color_mt("PNuts");
+            m_core_logger->set_level(spdlog::level::trace);
+
+            m_client_logger = spdlog::stdout_color_mt("App");
+            m_client_logger->set_level(spdlog::level::trace);
+        }
         inline static std::shared_ptr<spdlog::logger>& get_core_logger() {return m_core_logger;}
         inline static std::shared_ptr<spdlog::logger>& get_client_logger() {return m_client_logger;}
     private:
-        static std::shared_ptr<spdlog::logger> m_core_logger;
-        static std::shared_ptr<spdlog::logger> m_client_logger;
+        inline static std::shared_ptr<spdlog::logger> m_core_logger;
+        inline static std::shared_ptr<spdlog::logger> m_client_logger;
     };
 } // PNuts
 

@@ -8,8 +8,5 @@ include(CTest)
 enable_testing()
 include(ExternalProject)
 
-#third party modules
-add_subdirectory(third_party/spdlog)
-
 add_subdirectory(pnuts)
 add_subdirectory(sandbox)
