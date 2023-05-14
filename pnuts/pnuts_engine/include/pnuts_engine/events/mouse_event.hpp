@@ -1,6 +1,6 @@
 #pragma once
 
-#include <pnuts_engine/events/event.hpp>
+#include "event.hpp"
 #include <pnuts_engine/mouse_codes.h>
 
 namespace PNuts {
